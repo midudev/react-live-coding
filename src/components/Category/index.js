@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'wouter'
 
 export default function Category({name, options = []}){
-    return <>
+    return <div>
         <h3 className="App-title">{name}</h3>
         <ul>
             {options.map((singleOption) => (
@@ -11,5 +11,5 @@ export default function Category({name, options = []}){
                 </li>
             ))}
         </ul>
-    </>
+    </div>
 }
