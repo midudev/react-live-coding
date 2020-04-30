@@ -43,7 +43,7 @@ ul {
 
 form {
   display: flex;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   justify-content: center;
 }
 
