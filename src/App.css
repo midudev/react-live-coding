@@ -3,8 +3,14 @@
 }
 
 .App-logo {
-  object-fit: contain;
-  height: 250px;
+  margin: 10px auto;
+  padding: 20px 0;
+  width: 144px;
+}
+
+.App-logo img {
+  object-fit: cover;
+  width: 100%;
 }
 
 .App-title {
