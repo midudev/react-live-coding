@@ -1,0 +1,35 @@
+.Category-title {
+    color: white;
+    font-weight: bold;
+}
+
+.Category-list {
+    list-style-position: inside;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.Category-link {
+    color: white;
+    font-size: 1em;
+    padding: .5em;
+    transition: color ease-in .1s;
+}
+
+.Category-link:hover {
+    color: #8c55a2;
+}
+
+@media screen and (min-width: 640px) {
+    .Category-list {
+        display: list-item;
+    }
+
+    .Category-list li::before {
+        color: #8c55a2;
+        content: '--';
+        margin-right: .5em;
+        font-size: 1em;
+    }
+}

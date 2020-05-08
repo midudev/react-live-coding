@@ -3,16 +3,22 @@
 }
 
 .App-logo {
-  object-fit: contain;
-  height: 250px;
+  margin: 10px auto;
+  padding: 20px 0;
+  width: 144px;
+}
+
+.App-logo img {
+  object-fit: cover;
+  width: 100%;
 }
 
 .App-title {
-  color: #8d5aa4;
+  color: white;
 }
 
 .App-content {
-  background-color: #b2ebfa;
+  background-color: #121212;
   color: white;
   display: flex;
   flex-direction: column;
@@ -20,4 +26,34 @@
   min-height: 100vh;
   padding: 16px;
   text-align: left;
+}
+
+/*----------*/
+
+.App-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.App-results {
+  flex-shrink: 2;
+}
+
+.App-category {
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+@media screen and (min-width: 640px){
+  .App-main{
+    flex-direction: initial;
+  }
+
+  .App-category{
+    padding: 0 2em;
+    position: sticky;
+    top: 0;
+    width: 40%;
+  }
 }

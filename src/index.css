@@ -26,7 +26,7 @@ button {
   color: #fff;
   padding: 8px 16px;
   font-size: 16px;
-  border-radius: 0 6px 6px 0;
+  border-radius: 10px 0 0 10px;
 }
 
 a {
@@ -43,13 +43,13 @@ ul {
 
 form {
   display: flex;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   justify-content: center;
 }
 
 input[type=text] {
-  border-radius: 6px 0 0 6px;
+  border-radius: 0 10px 10px 0;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: none;
   padding: 4px 16px;
 }
