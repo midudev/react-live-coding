@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from "react"
-import { Link, useLocation } from "wouter"
-import getGifs from '../../services/getGifs'
+import React, {useState} from "react"
+import { useLocation } from "wouter"
 import ListOfGifs from '../../components/ListOfGifs'
 import Category from '../../components/Category'
 import {useGifs} from '../../hooks/useGifs'
