@@ -1,5 +1,6 @@
 .Gif {
   margin-bottom: .5em;
+  min-height: 100px;
 }
 
 .Gif-link {

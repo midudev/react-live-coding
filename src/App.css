@@ -38,6 +38,7 @@
 
 .App-results {
   flex-shrink: 2;
+  min-height: 100vh;
 }
 
 .App-category {

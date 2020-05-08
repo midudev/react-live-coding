@@ -13,6 +13,7 @@
 .Category-link {
   color: white;
   font-size: 1em;
+  margin: 0 8px;
   transition: color ease-in 0.1s;
 }
 
