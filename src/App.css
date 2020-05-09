@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #121212;
 }
 
 .App-logo {
@@ -18,7 +19,8 @@
 }
 
 .App-content {
-  background-color: #121212;
+  max-width: 900px;
+  margin: 0 auto;
   color: white;
   display: flex;
   flex-direction: column;
