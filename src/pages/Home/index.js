@@ -1,30 +1,35 @@
-import React, {useState} from "react"
-import { useLocation } from "wouter"
+import React, { useState } from "react";
+import { useLocation } from "wouter";
 
-import ListOfGifs from 'components/ListOfGifs'
-import {useGifs} from 'hooks/useGifs'
-import Trending from 'components/Trending'
+import ListOfGifs from "components/ListOfGifs";
+import { useGifs } from "hooks/useGifs";
+import Trending from "components/Trending";
 
 export default function Home() {
-  const [keyword, setKeyword] = useState('')
-  const [path, pushLocation] = useLocation()
-  const {loading, gifs} = useGifs()
+  const [keyword, setKeyword] = useState("");
+  const [path, pushLocation] = useLocation();
+  const { loading, gifs } = useGifs();
 
-  const handleSubmit = evt => {
-    evt.preventDefault()
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
     // navegar a otra ruta
-    pushLocation(`/search/${keyword}`)
-  }
+    pushLocation(`/search/${keyword}`);
+  };
 
-  const handleChange = evt => {
-    setKeyword(evt.target.value)
-  }
+  const handleChange = (evt) => {
+    setKeyword(evt.target.value);
+  };
 
   return (
     <>
       <form onSubmit={handleSubmit}>
         <button>Buscar</button>
-        <input placeholder="Search a gif here..." onChange={handleChange} type='text' value={keyword} />
+        <input
+          placeholder="Search a gif here..."
+          onChange={handleChange}
+          type="text"
+          value={keyword}
+        />
       </form>
       <div className="App-main">
         <div className="App-results">
@@ -36,5 +41,5 @@ export default function Home() {
         </div>
       </div>
     </>
-  )
+  );
 }

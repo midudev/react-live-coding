@@ -1,14 +1,16 @@
-import {API_KEY, API_URL} from './settings'
+import { getConfig } from "config/settings";
 
-const fromApiResponseToListOfTrending = apiResponse => {
-  const {data = []} = apiResponse
-  return data
-}
+const fromApiResponseToListOfTrending = (apiResponse) => {
+  const { data = [] } = apiResponse;
+  return data;
+};
 
-export default function getTrendingTerms () {
-  const apiURL = `${API_URL}/trending/searches?api_key=${API_KEY}`
+export default function getTrendingTerms() {
+  const apiURL = `${getConfig("API_URL")}/trending/searches?api_key=${getConfig(
+    "API_KEY"
+  )}`;
 
   return fetch(apiURL)
-    .then(res => res.json())
-    .then(fromApiResponseToListOfTrending)
+    .then((res) => res.json())
+    .then(fromApiResponseToListOfTrending);
 }

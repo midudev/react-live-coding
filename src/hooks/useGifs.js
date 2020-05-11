@@ -1,39 +1,42 @@
-import {useContext, useEffect, useState} from 'react'
-import getGifs from '../services/getGifs'
-import GifsContext from '../context/GifsContext'
+import { useContext, useEffect } from "react";
+import GifsContext from "context/GifsContext";
+import { useFetch } from "./useFetch";
+import { getService } from "config/services";
+import { usePagination } from "./usePagination";
 
-const INITIAL_PAGE = 0
-
-export function useGifs ({ keyword } = { keyword: null }) {
-  const [loading, setLoading] = useState(false)
-  const [loadingPage, setLoadingPage] = useState(false)
-  const [page, setPage] = useState(INITIAL_PAGE)
-  const {gifs, setGifs} = useContext(GifsContext)
-
+export function useGifs({ keyword } = { keyword: null }) {
   // recuperamos la keyword del localStorage
-  const keywordToUse = keyword || localStorage.getItem('lastKeyword') || 'random'
+  const keywordToUse =
+    keyword || localStorage.getItem("lastKeyword") || "random";
 
-  useEffect(function () {
-    setLoading(true)
+  const { page, setPage, limit, offset } = usePagination();
+  const { pending, response } = useFetch(
+    getService("getGifs")(keywordToUse, { page, limit, offset })
+  );
+  const { gifs, setGifs } = useContext(GifsContext);
 
-    getGifs({ keyword: keywordToUse })
-      .then(gifs => {
-        setGifs(gifs)
-        setLoading(false)
-        // guardamos la keyword en el localStorage
-        localStorage.setItem('lastKeyword', keyword)
-      })
-  }, [keyword, keywordToUse, setGifs])
+  const fromApiResponseToGifs = (apiResponse) => {
+    const { data = [] } = apiResponse;
+    if (Array.isArray(data)) {
+      const gifs = data.map((image) => {
+        const { images, title, id } = image;
+        const { url } = images.downsized_medium;
+        return { title, id, url };
+      });
+      return gifs;
+    }
+    return [];
+  };
 
-  useEffect(function () {
-    if (page === INITIAL_PAGE || gifs.length === 0) return
-    setLoadingPage(true)
-    getGifs({ keyword: keywordToUse, page })
-      .then(nextGifs => {
-        setGifs(prevGifs => prevGifs.concat(nextGifs))
-        setLoadingPage(false)
-      })
-  }, [gifs.length, keywordToUse, page, setGifs])
+  useEffect(() => {
+    if (response && response.data) {
+      setGifs(fromApiResponseToGifs(response));
+    }
+  }, [pending, response, setGifs]);
 
-  return {loading, gifs, loadingPage, page, setPage}
+  useEffect(() => {
+    localStorage.setItem("lastKeyword", keyword || keywordToUse);
+  }, [keyword, keywordToUse]);
+
+  return { loading: pending, gifs, loadingPage: pending, page, setPage };
 }
