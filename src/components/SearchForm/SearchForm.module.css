@@ -1,0 +1,22 @@
+.c-search {
+    display: flex;
+    justify-content: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: var(--theme-body-bg);
+    margin: 0 auto 30px;
+}
+
+.c-search-btn {
+    background: var(--brand-color_3);
+    border: 0;
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+
+  .c-search-input {
+    font-size: 16px;
+    border: none;
+    padding: 4px 16px;
+  }
