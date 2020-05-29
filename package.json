@@ -10,10 +10,12 @@
     "just-debounce-it": "1.1.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-helmet": "^6.0.0",
     "react-scripts": "3.4.1",
     "wouter": "2.4.0"
   },
   "scripts": {
+    "deploy": "vercel",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
