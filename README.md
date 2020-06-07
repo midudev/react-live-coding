@@ -15,5 +15,11 @@
 ### [5. CSS Grid, Infinite Scroll y Testing](https://youtu.be/oCHdFiCgOSE)
 [![Lazy Load, Suspense y Paginación](http://img.youtube.com/vi/oCHdFiCgOSE/mqdefault.jpg)](https://youtu.be/oCHdFiCgOSE)
 
+### [6. React.memo y Deploy con Vercel](https://youtu.be/Wo7_OVtu1ls)
+[![React.memo y Deploy con Vercel](http://img.youtube.com/vi/Wo7_OVtu1ls/mqdefault.jpg)](https://youtu.be/Wo7_OVtu1ls)
+
+### [7. SEO con React y Deploy integrado con GitHub](https://youtu.be/b-pwpHaYOTI)
+[![SEO con React y Deploy integrado con GitHub](http://img.youtube.com/vi/b-pwpHaYOTI/mqdefault.jpg)](https://youtu.be/b-pwpHaYOTI)
+
 ### [¿Quieres más videos sobre frontend? ¡Suscríbete a mi canal!](https://www.youtube.com/c/midudev?sub_confirmation=1)
 [![canal de midudev de Youtube](https://yt3.ggpht.com/a/AATXAJzuyjCt8K0QD8x_PrTB11LTlvpX2iVWk4eCSQ=s176-c-k-c0xffffffff-no-rj-mo)](https://www.youtube.com/c/midudev?sub_confirmation=1)
