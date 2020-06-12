@@ -35,5 +35,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/react-hooks": "^3.3.0",
+    "react-test-renderer": "^16.13.1"
   }
 }
