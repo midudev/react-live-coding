@@ -21,5 +21,8 @@
 ### [7. SEO con React y Deploy integrado con GitHub](https://youtu.be/b-pwpHaYOTI)
 [![SEO con React y Deploy integrado con GitHub](http://img.youtube.com/vi/b-pwpHaYOTI/mqdefault.jpg)](https://youtu.be/b-pwpHaYOTI)
 
+### [8. useReducer y testing de Hooks](https://youtu.be/Wjy_nlYXTik)
+[![SEO con React y Deploy integrado con GitHub](http://img.youtube.com/vi/Wjy_nlYXTik/mqdefault.jpg)](https://youtu.be/Wjy_nlYXTik)
+
 ### [¿Quieres más videos sobre frontend? ¡Suscríbete a mi canal!](https://www.youtube.com/c/midudev?sub_confirmation=1)
 [![canal de midudev de Youtube](https://yt3.ggpht.com/a/AATXAJzuyjCt8K0QD8x_PrTB11LTlvpX2iVWk4eCSQ=s176-c-k-c0xffffffff-no-rj-mo)](https://www.youtube.com/c/midudev?sub_confirmation=1)
