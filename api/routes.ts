@@ -13,7 +13,7 @@ const header: Jose = {
 export const getFavs = async (ctx: RouterContext) => {
   const {username} = ctx.state.currentUser
   ctx.response.status = 200
-  ctx.response.body = favs[username]
+  ctx.response.body = { favs: favs[username] }
 }
 
 export const deleteFav = async (ctx: RouterContext) => {

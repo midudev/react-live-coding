@@ -17,7 +17,7 @@ const router = new Router()
 app.use(userMiddleware, oakCors())
 
 router
-  .get('/favs/', authMiddleware, getFavs)
+  .get('/favs', authMiddleware, getFavs)
   .delete("/favs/:id", authMiddleware, deleteFav)
   .post("/favs/:id", authMiddleware, postFav)
   .post("/login", postLogin)

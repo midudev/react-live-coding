@@ -5,7 +5,13 @@ import { users, User } from "./users.ts";
 const userMiddleware = async (ctx: Context, next: Function) => {
   // Get JWT from request if available
   const { value = {} } = await ctx.request.body();
-  const {jwt} = value
+  let {jwt} = value
+  
+  if (!jwt) {
+    jwt = ctx.request.headers.get('Authorization')
+  }
+
+  console.log('using: ', {jwt})
 
   if (jwt) {
     // Validate JWT and if it is invalid delete from cookie
@@ -18,6 +24,7 @@ const userMiddleware = async (ctx: Context, next: Function) => {
       // If it is valid select user and save in context state
       const user: any = users.find((u: User) => u.username === data.payload.iss);
       ctx.state.currentUser = user;
+      console.log('found', {user})
       await next();
     } else {
       ctx.cookies.delete('jwt');
