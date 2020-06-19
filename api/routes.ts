@@ -85,10 +85,14 @@ export const postRegister = async (ctx: RouterContext) => {
   };
 
   // TODO: Check it doesn't exist yet
-  users.push(user);
+  const alreadyExist = users.find(user => user.username === username)
+  if (alreadyExist) {
+    ctx.response.status = 409
+  } else {
+    users.push(user);
+    // initialize the user favs
+    favs[username] = [];
+    ctx.response.status = 201
+  }
 
-  // initialize the user favs
-  favs[username] = [];
-
-  ctx.response.status = 201
 }
