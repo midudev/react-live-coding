@@ -11,7 +11,7 @@ export default function SearchForm({
 }) {
   const [_, pushLocation] = useLocation()
 
-  const {keyword, rating, times, changeKeyword, changeRating} = useForm({ initialKeyword, initialRating })
+  const {keyword, rating, changeKeyword, changeRating} = useForm({ initialKeyword, initialRating })
 
   const onSubmit = ({ keyword }) => {
     if (keyword !== '') {
@@ -44,7 +44,7 @@ export default function SearchForm({
           type="text"
           value={keyword}
         />
-        <select value={rating} onChange={handleChangeRating}>
+        <select className={css["c-search-list"]} value={rating} onChange={handleChangeRating}>
           <option disabled>
             Rating:
           </option>
@@ -52,7 +52,6 @@ export default function SearchForm({
             <option key={rating}>{rating}</option>
           ))}
         </select>
-        <small>{times}</small>
       </form>
     </>
   )
