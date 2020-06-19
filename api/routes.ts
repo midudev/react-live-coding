@@ -10,6 +10,12 @@ const header: Jose = {
   typ: 'JWT'
 };
 
+export const getFavs = async (ctx: RouterContext) => {
+  const {username} = ctx.state.currentUser
+  ctx.response.status = 200
+  ctx.response.body = favs[username]
+}
+
 export const deleteFav = async (ctx: RouterContext) => {
   const {id} = ctx.params
   const {username} = ctx.state.currentUser

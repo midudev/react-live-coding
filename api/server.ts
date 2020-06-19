@@ -4,6 +4,7 @@ import "https://deno.land/x/dotenv@v0.4.1/load.ts"
 import { userMiddleware } from "./userMiddleware.ts"
 import { authMiddleware } from "./authMiddleware.ts"
 import {
+  getFavs,
   deleteFav,
   postFav,
   postLogin,
@@ -16,8 +17,9 @@ const router = new Router()
 app.use(userMiddleware, oakCors())
 
 router
-  .delete("/fav/:id", authMiddleware, deleteFav)
-  .post("/fav/:id", authMiddleware, postFav)
+  .get('/favs/', authMiddleware, getFavs)
+  .delete("/favs/:id", authMiddleware, deleteFav)
+  .post("/favs/:id", authMiddleware, postFav)
   .post("/login", postLogin)
   .post("/register", postRegister)
 
