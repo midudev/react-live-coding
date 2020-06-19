@@ -3,6 +3,7 @@ import './App.css'
 
 import SearchResults from './pages/SearchResults'
 import Detail from './pages/Detail'
+import ErrorPage from './pages/ErrorPage'
 import Pepito from './context/StaticContext'
 import {GifsContextProvider} from './context/GifsContext'
 import { Link, Route } from "wouter"
@@ -34,8 +35,8 @@ export default function App() {
               path="/gif/:id"
             />
             <Route
-              component={() => <h1>404 ERROR :(</h1>}
-              path="/404"
+              component={ErrorPage}
+              path="/:rest*"
             />
           </GifsContextProvider>
         </section>
