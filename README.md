@@ -24,5 +24,8 @@
 ### [8. useReducer y testing de Hooks](https://youtu.be/Wjy_nlYXTik)
 [![SEO con React y Deploy integrado con GitHub](http://img.youtube.com/vi/Wjy_nlYXTik/mqdefault.jpg)](https://youtu.be/Wjy_nlYXTik)
 
+### [9. Login y Sesión de Usuarios para guardar Favoritos en React](https://youtu.be/VT5S9Y49SYs)
+[![Login y Sesión de Usuarios para guardar Favoritos en React](http://img.youtube.com/vi/Wjy_nlYXTik/mqdefault.jpg)](https://youtu.be/Wjy_nlYXTik)
+
 ### [¿Quieres más videos sobre frontend? ¡Suscríbete a mi canal!](https://www.youtube.com/c/midudev?sub_confirmation=1)
 [![canal de midudev de Youtube](https://yt3.ggpht.com/a/AATXAJzuyjCt8K0QD8x_PrTB11LTlvpX2iVWk4eCSQ=s176-c-k-c0xffffffff-no-rj-mo)](https://www.youtube.com/c/midudev?sub_confirmation=1)
