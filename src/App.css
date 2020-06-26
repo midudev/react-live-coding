@@ -76,6 +76,11 @@
   font-size: 1rem;
 }
 
+.btn[disabled] {
+  opacity: .3;
+  pointer-events: none;
+}
+
 .btn:hover {
   background-color: var(--brand-color_6);
 }

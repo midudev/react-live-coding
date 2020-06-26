@@ -12,3 +12,7 @@
 .gf-header a:hover {
   text-decoration: underline;
 }
+
+.gf-header a + a {
+  margin: 0 12px;
+}
