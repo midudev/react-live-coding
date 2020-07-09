@@ -3,6 +3,7 @@ import { Link, Route, Switch } from "wouter";
 
 import Header from "components/Header";
 
+import Register from 'pages/Register'
 import Login from "pages/Login";
 import SearchResults from "pages/SearchResults";
 import Detail from "pages/Detail";
@@ -36,6 +37,7 @@ export default function App() {
                 />
                 <Route component={Detail} path="/gif/:id" />
                 <Route component={Login} path="/login" />
+                <Route component={Register} path="/register" />
                 <Route component={ErrorPage} path="/:rest*" />
               </Switch>
             </GifsContextProvider>
