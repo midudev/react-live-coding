@@ -57,8 +57,8 @@ export default function ErrorPage() {
       </header>
       <div css={pageErrorStyles}>
         <span css={codeErrorStyles}>404</span>
-        <span class={msgErrorStyles}>Sometimes gettings lost isn't that bad</span>
-        <img class={gifErrorStyles} src={randomImage()} alt="alt-page-404" />
+        <span css={msgErrorStyles}>Sometimes gettings lost isn't that bad</span>
+        <img css={gifErrorStyles} src={randomImage()} alt="alt-page-404" />
         <Link href="/" class="btn">
           Go to home
         </Link>
