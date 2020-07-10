@@ -3,6 +3,7 @@
 import { jsx, css } from '@emotion/core'
 
 import React from 'react'
+import Button from 'components/Button'
 import SearchForm from "components/SearchForm";
 import { Helmet } from "react-helmet";
 import { Link } from "wouter";
@@ -24,9 +25,9 @@ const pageErrorStyles = css`
 `
 
 const codeErrorStyles = css`
-font-size: 5rem;
-font-weight: bold;
-font-style: italic;
+  font-size: 5rem;
+  font-weight: bold;
+  font-style: italic;
 `
 
 const msgErrorStyles = css`
@@ -35,9 +36,14 @@ const msgErrorStyles = css`
 `
 
 const gifErrorStyles = css`
-margin: 1rem auto;
-width: 250px;
-height: 250px;
+  transition: all .3s ease;
+  margin: 1rem auto;
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  &:hover {
+    transform: scale(1.1);
+  }
 `
 
 export default function ErrorPage() {
@@ -59,9 +65,9 @@ export default function ErrorPage() {
         <span css={codeErrorStyles}>404</span>
         <span css={msgErrorStyles}>Sometimes gettings lost isn't that bad</span>
         <img css={gifErrorStyles} src={randomImage()} alt="alt-page-404" />
-        <Link href="/" class="btn">
+        <Button href="/">
           Go to home
-        </Link>
+        </Button>
       </div>
     </>
   );

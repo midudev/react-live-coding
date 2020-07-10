@@ -4,9 +4,11 @@
   "private": true,
   "dependencies": {
     "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "emotion-theming": "^10.0.27",
     "intersection-observer": "0.10.0",
     "just-debounce-it": "1.1.0",
     "react": "16.13.1",

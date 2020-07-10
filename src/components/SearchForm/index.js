@@ -2,6 +2,7 @@ import React from "react"
 import { useLocation } from "wouter"
 import useForm from './hook'
 import css from "./SearchForm.module.css"
+import Button from 'components/Button'
 
 const RATINGS = ["g", "pg", "pg-13", "r"]
 
@@ -36,7 +37,7 @@ export default function SearchForm({
   return (
     <>
       <form onSubmit={handleSubmit} className={css["c-search"]}>
-        <button className={css["c-search-btn"]}>Buscar</button>
+        <Button>Buscar</Button>
         <input
           className={css["c-search-input"]}
           placeholder="Search a gif here..."
