@@ -1,20 +1,20 @@
-import React, {useCallback, useRef, useEffect} from 'react'
+import React, { useCallback, useRef, useEffect } from 'react'
 import Spinner from 'components/Spinner'
 import ListOfGifs from 'components/ListOfGifs'
 import SearchForm from 'components/SearchForm'
 
-import {useGifs} from 'hooks/useGifs'
+import { useGifs } from 'hooks/useGifs'
 import useNearScreen from 'hooks/useNearScreen'
 
 import debounce from 'just-debounce-it'
-import {Helmet} from 'react-helmet'
+import { Helmet } from 'react-helmet'
 
 export default function SearchResults ({ params }) {
-  const { keyword, rating } = params
-  const { loading, gifs, setPage } = useGifs({ keyword, rating })
-  
+  const { keyword, rating, lang } = params
+  const { loading, gifs, setPage } = useGifs({ keyword, rating, lang })
+
   const externalRef = useRef()
-  const {isNearScreen} = useNearScreen({
+  const { isNearScreen } = useNearScreen({
     externalRef: loading ? null : externalRef,
     once: false
   })
@@ -39,7 +39,7 @@ export default function SearchResults ({ params }) {
           <meta name="rating" content="General" />
         </Helmet>
         <header className="o-header">
-          <SearchForm initialKeyword={keyword} initialRating={rating} />
+          <SearchForm initialKeyword={keyword} initialRating={rating} initialLang={lang} />
         </header>
         <div className="App-wrapper">
           <h3 className="App-title">

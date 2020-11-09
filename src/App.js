@@ -16,7 +16,7 @@ import "./App.css";
 
 const HomePage = React.lazy(() => import("./pages/Home"));
 
-export default function App() {
+export default function App () {
   return (
     <UserContextProvider>
       <div className="App">
@@ -33,7 +33,7 @@ export default function App() {
                 <Route component={HomePage} path="/" />
                 <Route
                   component={SearchResults}
-                  path="/search/:keyword/:rating?"
+                  path="/search/:keyword/:rating?/:lang?"
                 />
                 <Route component={Detail} path="/gif/:id" />
                 <Route component={Login} path="/login" />
