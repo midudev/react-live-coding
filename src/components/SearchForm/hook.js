@@ -3,6 +3,7 @@ import { useReducer } from "react";
 const ACTIONS = {
   CHANGE_KEYWORD: "change_keyword",
   CHANGE_RATING: "change_rating",
+  CHANGE_LANG: "change_lang",
 };
 
 const ACTIONS_REDUCERS = {
@@ -15,6 +16,10 @@ const ACTIONS_REDUCERS = {
     ...state,
     rating: action.payload,
   }),
+  [ACTIONS.CHANGE_LANG]: (state, action) => ({
+    ...state,
+    lang: action.payload,
+  }),
 };
 
 const reducer = (state, action) => {
@@ -22,13 +27,15 @@ const reducer = (state, action) => {
   return actionReducer ? actionReducer(state, action) : state;
 };
 
-export default function useForm({
+export default function useForm ({
   initialKeyword = "",
   initialRating = "g",
+  initialLang = "es",
 } = {}) {
-  const [{ keyword, rating }, dispatch] = useReducer(reducer, {
+  const [{ keyword, rating, lang }, dispatch] = useReducer(reducer, {
     keyword: decodeURIComponent(initialKeyword),
-    rating: initialRating
+    rating: initialRating,
+    lang: initialLang
   });
 
   return {
@@ -36,7 +43,10 @@ export default function useForm({
       dispatch({ type: ACTIONS.CHANGE_KEYWORD, payload: keyword }),
     changeRating: ({ rating }) =>
       dispatch({ type: ACTIONS.CHANGE_RATING, payload: rating }),
+    changeLang: ({ lang }) =>
+      dispatch({ type: ACTIONS.CHANGE_LANG, payload: lang }),
     keyword,
-    rating
+    rating,
+    lang
   };
 }

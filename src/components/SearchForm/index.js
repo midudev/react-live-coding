@@ -5,19 +5,21 @@ import css from "./SearchForm.module.css"
 import Button from 'components/Button'
 
 const RATINGS = ["g", "pg", "pg-13", "r"]
+const LANGS = ["es", "en", "it", "pr"]
 
-export default function SearchForm({
+export default function SearchForm ({
   initialKeyword = '',
-  initialRating = RATINGS[0]
+  initialRating = RATINGS[0],
+  initialLang = LANGS[0],
 }) {
   const [_, pushLocation] = useLocation()
 
-  const {keyword, rating, changeKeyword, changeRating} = useForm({ initialKeyword, initialRating })
+  const { keyword, rating, lang, changeKeyword, changeRating, changeLang } = useForm({ initialKeyword, initialRating, initialLang })
 
   const onSubmit = ({ keyword }) => {
     if (keyword !== '') {
       // navegar a otra ruta
-      pushLocation(`/search/${keyword}/${rating}`)
+      pushLocation(`/search/${keyword}/${rating}/${lang}`)
     }
   }
 
@@ -32,6 +34,10 @@ export default function SearchForm({
 
   const handleChangeRating = (evt) => {
     changeRating({ rating: evt.target.value })
+  }
+
+  const handleChangeLang = (evt) => {
+    changeLang({ lang: evt.target.value })
   }
 
   return (
@@ -51,6 +57,14 @@ export default function SearchForm({
           </option>
           {RATINGS.map((rating) => (
             <option key={rating}>{rating}</option>
+          ))}
+        </select>
+        <select className={css["c-search-list"]} value={lang} onChange={handleChangeLang}>
+          <option disabled>
+            Lang:
+          </option>
+          {LANGS.map((lang) => (
+            <option key={lang}>{lang}</option>
           ))}
         </select>
       </form>
