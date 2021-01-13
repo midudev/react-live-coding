@@ -4,7 +4,7 @@ import Modal from "components/Modal";
 import Login from "components/Login";
 import { useLocation } from "wouter";
 
-import "./Fav.css";
+import { GifFav, GifFavIcon } from "./styles";
 
 export default function Fav({ id }) {
   const { isLogged, addFav, favs } = useUser();
@@ -32,11 +32,11 @@ export default function Fav({ id }) {
 
   return (
     <>
-      <button className="gf-Fav" onClick={handleClick}>
-        <span aria-label={label} role="img">
+      <GifFav className="gf-Fav" onClick={handleClick}>
+        <GifFavIcon aria-label={label} role="img">
           {emoji}
-        </span>
-      </button>
+        </GifFavIcon>
+      </GifFav>
       {showModal && (
         <Modal onClose={handleClose}>
           <Login onLogin={handleLogin} />

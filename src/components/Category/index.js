@@ -6,7 +6,6 @@ import {
   CategoryLink,
   CategoryList,
 } from "./styles";
-import "./Category.css";
 
 export default function Category({ name, options = [] }) {
   return (
