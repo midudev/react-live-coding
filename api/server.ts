@@ -1,6 +1,6 @@
 import { Application, Router } from "https://deno.land/x/oak@v5.0.0/mod.ts"
 import { oakCors } from "https://deno.land/x/cors/mod.ts"
-import "https://deno.land/x/dotenv@v0.4.1/load.ts"
+// import "https://deno.land/x/dotenv@v0.4.1/load.ts"
 import * as flags from 'https://deno.land/std/flags/mod.ts'
 
 import { userMiddleware } from "./userMiddleware.ts"

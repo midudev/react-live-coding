@@ -1,30 +1,35 @@
-import { Context } from "https://deno.land/x/oak@v5.0.0/mod.ts";
-import { validateJwt } from "https://deno.land/x/djwt/validate.ts"
-import { users, User } from "./users.ts";
+import { Context } from 'https://deno.land/x/oak@v5.0.0/mod.ts';
+import { validateJwt } from 'https://deno.land/x/djwt@v1.5/validate.ts';
+import { users, User } from './users.ts';
 
 const userMiddleware = async (ctx: Context, next: Function) => {
   // Get JWT from request if available
-  const { value = {} } = await ctx.request.body();
-  let {jwt} = value
-  
+  const { value = {} } = await ctx.request.body();
+  let { jwt } = value;
+
   if (!jwt) {
-    jwt = ctx.request.headers.get('Authorization')
+    jwt = ctx.request.headers.get('Authorization');
   }
 
-  console.log('using: ', {jwt})
+  console.log('using: ', { jwt });
+  // const key = Deno.env.get('JWT_KEY');
+  const key = '';
+  const algorithm = "HS512"// algorithm
 
   if (jwt) {
     // Validate JWT and if it is invalid delete from cookie
-    const data: any = await validateJwt(jwt, Deno.env.get('JWT_KEY') || '');
-    
+    const data: any = await validateJwt({jwt, key, algorithm});
+
     if (!data.isValid || data.isExpired) {
       ctx.cookies.delete('jwt');
-      ctx.response.status = 401
+      ctx.response.status = 401;
     } else if (data) {
       // If it is valid select user and save in context state
-      const user: any = users.find((u: User) => u.username === data.payload.iss);
+      const user: any = users.find(
+        (u: User) => u.username === data.payload.iss
+      );
       ctx.state.currentUser = user;
-      console.log('found', {user})
+      console.log('found', { user });
       await next();
     } else {
       ctx.cookies.delete('jwt');
@@ -34,6 +39,6 @@ const userMiddleware = async (ctx: Context, next: Function) => {
     ctx.state.currentUser = null;
     await next();
   }
-}
+};
 
-export {userMiddleware};
+export { userMiddleware };
