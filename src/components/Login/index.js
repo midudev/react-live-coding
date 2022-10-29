@@ -32,7 +32,6 @@ export default function Login({ onLogin }) {
             placeholder="username"
             onChange={(e) => setUsername(e.target.value)}
             value={username}
-            autoComplete={false}  
           />
           </label>
 
