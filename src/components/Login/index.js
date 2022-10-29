@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import {useLocation} from "wouter"
+import React, { useState, useEffect, useCallback } from "react";
+import { useLocation } from "wouter"
 import useUser from 'hooks/useUser'
-import { useEffect } from "react";
 import './Login.css'
 
-export default function Login({onLogin}) {
+export default function Login({ onLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [, navigate] = useLocation()
@@ -17,27 +16,28 @@ export default function Login({onLogin}) {
     }
   }, [isLogged, navigate, onLogin])
 
-  const handleSubmit = (e) => {
+  const handleSubmit = useCallback((e) => {
     e.preventDefault();
     login({ username, password })
-  };
+  }, [login, username, password])
 
   return (
     <>
       {isLoginLoading && <strong>Checking credentials...</strong>}
       {!isLoginLoading &&
-        <form className='form' onSubmit={handleSubmit}>
+        <form className='form' onSubmit={handleSubmit} autoComplete={false} >
           <label>
-            username
+            Username
             <input
             placeholder="username"
             onChange={(e) => setUsername(e.target.value)}
             value={username}
+            autoComplete={false}  
           />
           </label>
 
           <label>
-            password
+            Password
             <input
               type="password"
               placeholder="password"
