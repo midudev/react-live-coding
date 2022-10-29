@@ -1,4 +1,4 @@
-import styled from 'styled-components' ;
+import styled from "@emotion/styled";
 
 const Container = styled.section`
   display: flex;
@@ -6,6 +6,6 @@ const Container = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
+`;
 
 export default Container;
