@@ -9,6 +9,10 @@
   width: 100%;
 }
 
+.App-logo:hover {
+  cursor: pointer;
+}
+
 .App-title {
   color: var(--theme-body-txt);
   margin-top: 0.6rem;
