@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   margin: 10px auto;
   padding: 20px 0;
@@ -11,6 +7,10 @@
 .App-logo img {
   object-fit: cover;
   width: 100%;
+}
+
+.App-logo:hover {
+  cursor: pointer;
 }
 
 .App-title {
